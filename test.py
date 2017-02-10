@@ -1,7 +1,19 @@
-def basic_op(operator, value1, value2):
-    #take advantage of Python built in function, eval
-    return eval( str(value1) + operator + str(value2) )
-print basic_op('*', 5, 5)
-print basic_op('+', 4, 7)
-print basic_op('-', 15, 18)
-print basic_op('/', 49, 7)
+def digitize(n):
+    n = str(n)
+    if n > 0:
+        x = len(str(n))
+        y = str(n)
+        y = y[1:x]
+        ls = list(y)
+        ls = map(int, ls)
+        ls.insert(0, 0)
+        return ls
+    else:
+        y = int(str(n)[::-1])
+        y = str(y)
+        ls = list(y)
+        ls = map(int, ls)
+        return ls
+
+
+print digitize(0348597)
